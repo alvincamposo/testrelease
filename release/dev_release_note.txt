@@ -1,0 +1,14 @@
+Update to v2.0.9
+
+
+
+## Task 
+Please make a release on March 29th 14:00 (JST) after confirming all `Must for Next Release` PRs are merged. 
+
+- Please read: 
+https://docs.google.com/spreadsheets/d/1dNKM7lJ5yzFq1_9GyLLAMQpzFJABlGqc7zF5DRtfuIg/edit#gid=1266089467&range=B30
+## JIRA ticket
+
+https://frit.rickcloud.jp/jira/browse/ARIAKECOMP-1345
+
+
