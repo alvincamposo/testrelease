@@ -1,0 +1,128 @@
+.nav {
+	max-width: $site-size;
+	width: auto;
+	margin: auto;
+	position: relative;
+	padding: 0 28px 0 15px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0 22px 0 17px;
+	}
+	@include max-screen($breakpoint-small) {
+		padding: 0 10px;
+	}
+}
+
+.nav-logo {
+	float: left;
+}
+
+.nav-logo-svg {
+	@include max-screen($breakpoint-mobile) {
+		width: 42px;
+		height: auto;
+	}
+}
+
+.nav-content {
+	float: right;
+}
+
+.nav-list {
+	font-size: 0;
+	letter-spacing: 0;
+	list-style-type: none;
+	@include max-screen($breakpoint-mobile) {
+		margin-top: 3px;
+	}
+}
+
+.nav-item {
+	display: inline-block;
+	position: relative;
+	&:after {
+		content: "/";
+		margin: 0 20px;
+		font-size: $base-font-size;
+		vertical-align: middle;
+	}
+	$last-hover: ':last-child:after';
+	&#{$last-hover} {
+		content: none;
+	}
+	@include max-screen($breakpoint-mobile) {
+		&:after {
+			margin: 0 13px;
+		}
+	}
+	@include max-screen($breakpoint-small) {
+		&:after {
+			margin: 0 7px;
+		}
+	}
+}
+
+.nav-link {
+	color: $base-font-color;
+	position: relative;
+	&:before {
+		content: "";
+		width: 0%;
+		height: 1px;
+		background-color: $base-font-color;
+		position: absolute;
+		bottom: -15px;
+		left: initial;
+		right: 0;
+		transition: width $duration $easing;
+	}
+	$hover-before: ':hover:before';
+	&#{$hover-before} {
+		content: "";
+		width: 100%;
+		right: initial;
+		left: 0;
+	}
+}
+
+.nav-message {
+	@include max-screen($breakpoint-mobile) {
+		width: 50px;
+		height: auto;
+	}
+}
+
+.nav-overview {
+	@include max-screen($breakpoint-mobile) {
+		width: 60px;
+		height: auto;
+	}
+}
+
+.nav-job {
+	@include max-screen($breakpoint-mobile) {
+		width: 21px;
+		height: auto;
+		margin-top: 3px;
+	}
+}
+
+.nav-member {
+	@include max-screen($breakpoint-mobile) {
+		width: 50px;
+		height: auto;
+	}
+}
+
+// IS STATE
+
+.nav-item {
+	&.is-active {
+		$nav-link-before: '.nav-link:before';
+		#{$nav-link-before} {
+			width: 100%;
+			right: initial;
+			left: 0;
+		}
+	}
+}
+
