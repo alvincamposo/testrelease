@@ -53,7 +53,7 @@ echo "3. npm run build:prod"
 npm run build:prod
 
 echo "4. commit push the generated build files on #2"
-git add package-lock.json dist/*
+git add package-lock.json public/assets/*
 git commit -m "Production build update"
 
 echo "5. tag the commit"
