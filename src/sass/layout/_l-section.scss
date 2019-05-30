@@ -1,0 +1,39 @@
+.l-section {
+	display: block;
+	margin-top: 155px;
+	@include max-screen($breakpoint-mobile) {
+		margin-top: 94px;
+	}
+}
+
+// MODIFIER
+.l-section-message {
+	margin-bottom: 19px;
+	@include max-screen($breakpoint-mobile) {
+		margin: 76px 0 0;
+	}
+}
+
+.l-section-job {
+	margin-top: 180px;
+}
+
+.l-section-overview {
+	margin-top: 174px;
+	@include max-screen($breakpoint-mobile) {
+		margin-top: 92px;
+	}
+}
+
+.l-section-job {
+	@include max-screen($breakpoint-mobile) {
+		margin-top: 99px;
+	}
+}
+
+.l-section-member {
+	margin-top: 173px;
+	@include max-screen($breakpoint-mobile) {
+		margin-top: 94px;
+	}
+}
