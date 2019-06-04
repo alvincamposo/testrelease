@@ -2,7 +2,7 @@
 
 set -e
 
-VERSION='3.0.4'
+VERSION='3.0.7'
 ASSIGNEES='spycat9'
 REVIEWERS="'alvincamposo'"
 
