@@ -2,8 +2,8 @@
 
 set -e
 
-VERSION='2.0.6'
-ASSIGNEES=''
+VERSION='3.0.2'
+ASSIGNEES='spycat9'
 REVIEWERS="'alvincamposo'"
 
 OLD_VERSION=`sed -n 's/  "version": "\([0-9]*\.[0-9]*\.[0-9]*\)",/\1/p' package.json`
