@@ -2,9 +2,9 @@
 
 set -e
 
-VERSION='3.0.4'
+VERSION='3.0.9'
 ASSIGNEES='spycat9'
-REVIEWERS="'alvincamposo'"
+REVIEWERS="spycat9"
 
 OLD_VERSION=`sed -n 's/  "version": "\([0-9]*\.[0-9]*\.[0-9]*\)",/\1/p' package.json`
 DATE=`date +%Y%m%d`
