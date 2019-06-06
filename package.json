@@ -1,6 +1,6 @@
 {
   "name": "Frontplate",
-  "version": "3.0.13",
+  "version": "3.0.19",
   "description": "フロントエンド開発の効率をあげるフルスタックテンプレート",
   "dependencies": {
     "imports-loader": "^0.8.0",
