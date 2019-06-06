@@ -1,18 +1,26 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -euo pipefail
+IFS=$'\n\t'
 
-VERSION='3.0.4'
-ASSIGNEES='spycat9'
-REVIEWERS="'alvincamposo'"
+ASSIGNEES=''
+DEFAULT_REVIEWERS='alvincamposo'
+PR_LABELS='Wave 3.0'
 
-OLD_VERSION=`sed -n 's/  "version": "\([0-9]*\.[0-9]*\.[0-9]*\)",/\1/p' package.json`
+OLD_VERSION="$(jq -r '.version' package.json)"
 DATE=`date +%Y%m%d`
+SCRIPT_DIR=$(cd $(dirname $0);pwd)
+
+default_next_version="$(awk '{split($0,v,".");printf("%d.%d.%d",v[1],v[2],v[3]+1)}' <<<"$OLD_VERSION")"
+
+read -rp "Next Version (${default_next_version}): " VERSION
+: ${VERSION:=${default_next_version}}
+
+read -rp "Reviewers (${DEFAULT_REVIEWERS}): " REVIEWERS
+: ${REVIEWERS:=${DEFAULT_REVIEWERS}}
 
 DEV_BRANCH="UpdateTo${VERSION}"
 MASTER_BRANCH="Build${DATE}v${VERSION}"
-SCRIPT_DIR=$(cd $(dirname $0);pwd)
-
 
 echo
 echo "Release workflow"
@@ -24,45 +32,75 @@ echo $DATE
 echo $DEV_BRANCH
 echo $MASTER_BRANCH
 
-echo "1. checkout dev branch"
-git checkout dev
+read -rp "Create PR for dev/master release？ (y/n)" push_pr
 
-echo "2. create branch from dev"
-git checkout -b $DEV_BRANCH
+echo '1) Fetching origin ...'
+git checkout origin
 
-echo "3. change package.json version"
-sed -i -e "s/\"version\": \"${OLD_VERSION}\"/\"version\": \"${VERSION}\"/" package.json
+echo "2) Creating ${DEV_BRANCH} branch from origin/dev ..."
+git checkout -B "$DEV_BRANCH" origin/dev
+
+echo '3) Updating the version in package.json ...'
+jq ".version=\"${VERSION}\"" package.json >package.json.tmp
+mv -f package.json.tmp package.json
+
+echo '4) Committing changes ...'
 git add package.json
-git commit -m "Changed package.json version"
+git commit -m 'Update the version in package.json'
 
+echo '5) Pushing to origin ...'
+git push -f origin "$DEV_BRANCH";
 
-echo "4. create PR, then set destination PR -> dev branch"
-git push origin  $DEV_BRANCH
-hub pull-request -F $SCRIPT_DIR/dev_release_note.txt --edit --push --base "dev" --reviewer $REVIEWERS --assign $ASSIGNEES --labels "Release"
+if [[ "$push_pr" == [yY] ]]; then
+  # TODO Generate the PR description here
 
+  echo "6) Creating a PR: ${DEV_BRANCH} -> dev ..."
+  hub pull-request \
+      -b 'dev' \
+      -r "$REVIEWERS" \
+      -a "$ASSIGNEES" \
+      -l "$PR_LABELS" \
+      -F "${SCRIPT_DIR}/release_note_dev.txt" \
+      --edit
+fi
 
 echo "Merge to master branch & create new build"
 
-echo "1. create branch from (the branch created above)"
-git checkout -b $MASTER_BRANCH
+echo "1) Creating ${MASTER_BRANCH} from ${DEV_BRANCH} ..."
+git checkout -B "$MASTER_BRANCH" "$DEV_BRANCH"
 
-echo "2. npm install"
+echo '2) Setting up build environment ...'
+nvm use
+
+echo '3) Cleaning up the outdated dependencies and artifacts ...'
+rm -rf .dist dist node_modules
+
+echo '4) Installing build dependencies ...'
 npm install
 
-echo "3. npm run build:prod"
+echo '5) Building ...'
 npm run build:prod
 
-echo "4. commit push the generated build files on #2"
-git add package-lock.json public/assets/*
-git commit -m "Production build update"
+echo '6) Committing the build artifacts ...'
+git add -f dist package-lock.json
+git commit -m 'Production build update'
 
-echo "5. tag the commit"
-git tag -a v${VERSION} -m 'prod build'
+echo '7) Rebasing the commits on origin/master using ours strategy ...'
+git rebase -s ours origin master
 
-echo "6. create PR (with release notes), then set destination PR -> master branch"
-git push origin  $MASTER_BRANCH
-hub pull-request -F $SCRIPT_DIR/master_release_note.txt --edit --push --base "master" --reviewer $REVIEWERS --assign $ASSIGNEES --labels "Release"
+echo '8) Pushing to origin ...'
+git push -f origin "$MASTER_BRANCH";
 
+if [[ "$push_pr" == [yY] ]]; then
+  echo "9) Creating a PR: ${MASTER_BRANCH} -> master ..."
+  hub pull-request \
+      -b "master" \
+      -r "$REVIEWERS" \
+      -a "$ASSIGNEES" \
+      -l "$PR_LABELS" \
+      -F $SCRIPT_DIR/release_note_master.txt \
+      --edit
+fi
 
 ##When release PRs need to be merged.
 #1. Merge first the -> dev PR
@@ -72,4 +110,3 @@ hub pull-request -F $SCRIPT_DIR/master_release_note.txt --edit --push --base "ma
 echo
 echo "done!"
 echo
-
