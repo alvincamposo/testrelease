@@ -1,0 +1,45 @@
+Build 2019-03-29 v2.0.9
+
+
+# Release Notes Wave 2.0 v2.0.9
+
+- Accordion_Remove inline styles from component [`Wave 2.0`] [`bug`] [#1171](https://github.com/fastretailing/fr-css-framework/pull/1171)
+- [CSS FW ONLY] Pulldown_Replace hardcoded texts and make it more flexible to import [`Wave 2.0`] [#1162](https://github.com/fastretailing/fr-css-framework/pull/1162)
+- [New Variation] Transition Button - with Logos and with Logos Disabled_Create 2 new variations [`Wave 2.0`] [`new variation component`] [#1156](https://github.com/fastretailing/fr-css-framework/pull/1156)
+- Loading Skeleton [`Wave 2.0`] [`new component`] [#1166](https://github.com/fastretailing/fr-css-framework/pull/1166)
+- [CSS FW ONLY] [Documentation] Utility Bar_Update Utility Bar mockup pages (add Sort dropdown) [`Wave 2.0`] [#1152](https://github.com/fastretailing/fr-css-framework/pull/1152)
+- [New Variation] Definition List - Inline with Slash_Create a new variation "Inline with Slash"  [`Wave 2.0`] [`new variation component`] [#1154](https://github.com/fastretailing/fr-css-framework/pull/1154)
+- [New Variation] Carousel Container - Number Indicator [`Wave 2.0`] [`new variation component`] [#1063](https://github.com/fastretailing/fr-css-framework/pull/1063)
+- Purchase History_Support alteration info [`Wave 2.0`] [#1110](https://github.com/fastretailing/fr-css-framework/pull/1110)
+- [New Variation] Radio - Bold with Tooltip [`Wave 2.0`] [`new variation component`] [#1111](https://github.com/fastretailing/fr-css-framework/pull/1111)
+- [Markup Modification] [New Variation] Search Form_Update Search Form design [`Wave 2.0`] [`markup modifications`] [`new variation component`] [#1112](https://github.com/fastretailing/fr-css-framework/pull/1112)
+- [CSS FW ONLY] [Documentation] Some styles are not applied to SC5 [`bug`] [`styling`] [#1119](https://github.com/fastretailing/fr-css-framework/pull/1119)
+- [CSS FW ONLY] Replace hardcoded texts [`Wave 2.0`] [#1136](https://github.com/fastretailing/fr-css-framework/pull/1136)
+- [CSS FW ONLY] List - Bordered Bottom With Side Padding_Add styles to match with design for Transition Button [`Wave 2.0`] [#1145](https://github.com/fastretailing/fr-css-framework/pull/1145)
+Updates from Stage1_Add Sub Area [`Wave 1.5`] [#1147](https://github.com/fastretailing/fr-css-framework/pull/1147)
+- [New Variation] Heading - with Logos_Create a new variation of Heading with Logos [`Wave 2.0`] [`new variation component`] [#1151](https://github.com/fastretailing/fr-css-framework/pull/1151)
+- [CSS FW Only] [New Component] Loading Indicator_Add Loading Indicator [`Wave 2.0`] [`new component`] [#1132](https://github.com/fastretailing/fr-css-framework/pull/1132)
+- [Markup Modification] Transition Button - with Icon with Counter_Modify the markup so that the counter follows the title. [`Must for Next Release`] [`Wave 2.0`] [`bug`] [`markup modifications`] [#1194](https://github.com/fastretailing/fr-css-framework/pull/1194)
+- [CSS FW ONLY] Definition List - Price Compact_Margin-top should be adjusted when it is right below of Wrapper > Radio [`Must for Next Release`] [`Wave 2.0`] [#1168](https://github.com/fastretailing/fr-css-framework/pull/1168)
+- [New Variation] Transition Button Cards - with Counter_Add new variation with Counter [`Must for Next Release`] [`Wave 2.0`] [`new variation component`] [#1200](https://github.com/fastretailing/fr-css-framework/pull/1200)
+- [CSS FW ONLY] [Mockup] Payment - Credit Card_Update Payment - Credit Card page to include Text Field for postal code [`Must for Next Release`] [`Wave 2.0`] [#1199](https://github.com/fastretailing/fr-css-framework/pull/1199)
+
+
+*Also includes below PRs to support Japanese on our SC5 Style Guide*
+- [CSS FW ONLY] [Mockup] Payment Method - Pay Later_Create Payment Method - Pay Later page [`Wave 2.0`] [#1098](https://github.com/fastretailing/fr-css-framework/pull/1098)
+- [CSS FW ONLY] Replace hardcoded texts [`Wave 2.0`] [#1136](https://github.com/fastretailing/fr-css-framework/pull/1136)
+- [CSS FW ONLY] Remove all Japanese specific font styles applied to components [`Wave 2.0`] [#1138](https://github.com/fastretailing/fr-css-framework/pull/1138)
+- [CSS FW ONLY] Review Stars_Review Stars have unwanted space between star and star margin only in lang: ja [`Wave 2.0`] [`bug`] [#1140](https://github.com/fastretailing/fr-css-framework/pull/1140)
+- [CSS FW ONLY] Language Support_Update English and Japanese Typography [`Wave 2.0`] [#1141](https://github.com/fastretailing/fr-css-framework/pull/1141)
+- [FIX] [CSS FW ONLY] Language Support_Update English and Japanese Typography [`Wave 2.0`] [`bug`] [#1148](https://github.com/fastretailing/fr-css-framework/pull/1148)
+- [CSS FW ONLY] #050-054_Text_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1191](https://github.com/fastretailing/fr-css-framework/pull/1191)
+- [CSS FW ONLY] #026-038_Heading_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1186](https://github.com/fastretailing/fr-css-framework/pull/1186)
+- [CSS FW ONLY] #188-198_Text Field_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1189](https://github.com/fastretailing/fr-css-framework/pull/1189)
+- [CSS FW ONLY] #157-165_Pulldown_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1192](https://github.com/fastretailing/fr-css-framework/pull/1192)
+- [CSS FW ONLY] #218-222_Confirmation Dialog_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1187](https://github.com/fastretailing/fr-css-framework/pull/1187)
+- [CSS FW ONLY] #280_Sticky Header_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1196](https://github.com/fastretailing/fr-css-framework/pull/1196)
+- [CSS FW ONLY] #069-071_Unordered List_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1188](https://github.com/fastretailing/fr-css-framework/pull/1188)
+- [CSS FW ONLY] #075-081_Button_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1195](https://github.com/fastretailing/fr-css-framework/pull/1195)
+- [CSS FW ONLY] #012-013_Link In Texts_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1197](https://github.com/fastretailing/fr-css-framework/pull/1197)
+- [CSS FW ONLY] #082-086_Checkbox_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1190](https://github.com/fastretailing/fr-css-framework/pull/1190)
+- [CSS FW ONLY] #023-025_Annotations_Japanese font styles [`Must for Next Release`] [`Wave 2.0`] [#1185](https://github.com/fastretailing/fr-css-framework/pull/1185)
