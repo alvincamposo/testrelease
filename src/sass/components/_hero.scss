@@ -1,0 +1,70 @@
+.hero {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	@media screen and (max-width: 440px) {
+		max-height: 580px;
+	}
+}
+
+.hero-wrap {
+	max-width: $site-size;
+	margin: auto;
+	@include max-screen($breakpoint-mobile) {
+		width: 100%;
+		height: 100%;
+		max-width: unset;
+		position: relative;
+	}
+}
+
+.hero-title {
+	text-align: center;
+	padding-top: 86px;
+	position: relative;
+	z-index: 2;
+	margin: 0 0 0 -2px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0;
+		position: absolute;
+		top: 51%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		transform: translate(0, -150%);
+	}
+	@include screen($breakpoint-landscape, $breakpoint-mobile) {
+		top: 45%;
+	}
+}
+
+.hero-title-image {
+	max-width: 591px;
+	height: auto;
+}
+
+.hero-title-svg {
+	@include max-screen($breakpoint-mobile) {
+		text-align: center;
+		max-width: 290px;
+		height: auto;
+	}
+}
+
+.hero-model {
+	max-width: 105vh;
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	right: 0;
+}
+
+.hero-model-image {
+	max-width: 100%;
+	height: auto;
+	transition: opacity $delay $easing;
+	transition-delay: 0.5s;
+}

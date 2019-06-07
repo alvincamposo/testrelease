@@ -1,0 +1,61 @@
+.title {
+	text-align: center;
+	margin-bottom: 91px;
+}
+
+.title-message-svg {
+	@include max-screen($breakpoint-mobile) {
+		width: 257px;
+		height: auto;
+	}
+}
+
+.title-overview-svg {
+	@include max-screen($breakpoint-mobile) {
+		width: 307px;
+		height: auto;
+	}
+}
+
+.title-job-svg {
+	@include max-screen($breakpoint-mobile) {
+		width: 105px;
+		height: auto;
+	}
+}
+
+.title-member-svg {
+	@include max-screen($breakpoint-mobile) {
+		width: 255px;
+		height: auto;
+	}
+}
+
+// MODIFIER
+
+.title-message {
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 40px;
+	}
+}
+
+.title-job {
+	margin-bottom: 55px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 39px;
+	}
+}
+
+.title-member {
+	margin-bottom: 60px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 51px;
+	}
+}
+
+.title-overview {
+	margin-bottom: 61px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 40px;
+	}
+}

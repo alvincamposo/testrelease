@@ -1,0 +1,45 @@
+.quote {
+	text-align: center;
+	position: relative;
+	height: 100vh;
+	@include max-screen($breakpoint-mobile) {
+		height: 70vh;
+	}
+}
+
+.quote-text {
+	position: absolute;
+	left: 0;
+	top: 45%;
+	width: 100%;
+	opacity: 0;
+}
+
+.quote-text-svg {
+	@include max-screen($breakpoint-mobile) {
+		max-width: 280px;
+		height: auto;
+	}
+}
+.quote-line {
+	position: absolute;
+    left: 50%;
+    bottom: -66px;
+    width: 1px;
+    height: 240px;
+    background: $base-font-color;
+    @include max-screen($breakpoint-mobile) {
+    	height: 60px;
+    	bottom: -8px;
+    }
+}
+
+// IS STATE
+.js-quote-text {
+	&.is-show {
+		animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		animation-timing-function: linear;
+	}	
+}
