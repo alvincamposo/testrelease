@@ -1,0 +1,42 @@
+.button {
+	display: block;
+	width: 360px;
+	text-align: center;
+	padding: 18px 0;
+	margin: 0 auto 25px;
+	font-size: 18px;
+	font-weight: 700;
+	background: $base-font-color;
+	color: $base-background-color;
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		right: 22px;
+		top: 50%;
+		transform: translate(0, -50%) rotate(45deg);
+		width: 10px;
+		height: 10px;
+		background: transparent;
+		border-top: 2px solid $base-background-color;
+		border-right: 2px solid $base-background-color;
+		transition: right $duration $easing;
+	}
+	$hover-before: ':hover:before';
+	&#{$hover-before} {
+		right: 15px;
+	}
+	@include max-screen($breakpoint-mobile) {
+		width: 100%;
+		margin-bottom: 6px;
+	}
+}
+
+.button-text {
+	display: block;
+	padding: 0 30px;
+	letter-spacing: 0.15em;
+	@include max-screen($breakpoint-mobile) {
+		letter-spacing: 0.05em;
+	}
+}

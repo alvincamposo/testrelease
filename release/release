@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# -*- mode: sh -*-
+
+set -euo pipefail
+IFS=$'\n\t'
+
+basedir="$(dirname "$0")"
+# shellcheck source=lib/helper_functions.bash
+. "${basedir}/lib/helper_functions.bash"
+
+# parse args
+create_dev_pr=0
+
+for arg in "$@"; do
+  case "$arg" in
+    dev )
+      create_dev_pr=1
+      ;;
+
+    *)
+      # TODO handle the error
+      ;;
+  esac
+done
+
+# run scripts
+if [[ "$create_dev_pr" == 1 ]]; then
+  "${basedir}/libexec/create_dev_pr"
+fi
