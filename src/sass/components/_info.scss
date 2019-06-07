@@ -1,0 +1,320 @@
+.info {
+	display: table;	
+	border-top: 1px solid $base-font-color;
+	width: 100%;
+	padding: 30px 0;
+	@include max-screen($breakpoint-mobile) {
+		display: block;
+	}
+}
+
+.info-program {
+	padding: 56px 0 54px;
+}
+
+.info-entry {
+	padding: 27px 0 26px;
+}
+
+.info-people {
+	padding: 27px 0;
+}
+
+.info-participation {
+	padding: 28px 0 27px;
+}
+
+.info-venue {
+	padding: 59px 0 53px;
+	border-bottom: 1px solid $base-font-color;
+	margin-bottom: 80px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 62px 0 53px;
+		margin-bottom: 40px;
+	}
+}
+
+.info-title {
+	display: table-cell;
+	vertical-align: middle;
+	width: 210px;
+	padding-left: 31px;
+	@include max-screen($breakpoint-mobile) {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+}
+
+.info-entry-title {
+	padding: 0 0 0 27px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0;
+	}
+}
+
+.info-title-people {
+	padding-left: 28px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0;
+	}
+}
+
+.info-title-participation {
+	padding-left: 28px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0;
+	}
+}
+
+.info-title-venue {
+	padding-bottom: 7px;
+	@include max-screen($breakpoint-mobile) {
+		padding: 0;
+	}
+}
+
+.info-title-text {
+	font-weight: 600;
+}
+
+.info-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.info-desc {
+	font-weight: 600;
+	letter-spacing: 0.05em;
+}
+
+.info-desc-people {
+	letter-spacing: 0.035em;
+}
+
+.info-list {
+	list-style-type: none;
+}
+
+.info-item {
+	font-weight: 600;
+	line-height: 1.8;
+	margin-left: 1em;
+	margin-bottom: 26px;
+	letter-spacing: 0.05em;
+	position: relative;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&:before {
+		content: '';
+		width: 3px;
+		height: 3px;
+		background: $base-font-color;
+		border-radius: 50%;
+		position: absolute;
+		left: -9px;
+		top: 10px;
+	}
+}
+
+.info-map-desc {
+	line-height: 1.8;
+	letter-spacing: 0.05em;
+}
+
+.info-map-desc-title {
+	font-weight: 600;
+}
+
+.info-map {
+	display: table;
+	margin-bottom: 52px;
+	&:last-child {
+		margin: 0;
+	}
+	@include max-screen($breakpoint-mobile) {
+		display: block;
+	}
+}
+
+.info-hiroshima {
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 66px;
+	}
+}
+
+.info-fukuoka {
+	margin-bottom: 76px;
+}
+
+.info-map-icon {
+	display: table-cell;
+	width: 120px;
+	vertical-align: top;
+	text-align: center;
+	padding-top: 11px;
+	@include max-screen($breakpoint-mobile) {
+		display: block;
+		width: auto;
+		margin-bottom: 30px;
+	}
+}
+
+.info-map-icon-hokkaido {
+	padding-top: 18px;
+}
+
+.info-map-icon-kyoto {
+	padding-top: 10px;
+}
+
+.info-map-icon-osaka {
+	padding-top: 18px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 48px;
+	}
+}
+
+.info-map-icon-hiroshima {
+	padding-top: 15px;
+}
+
+.info-map-icon-okinawa {
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 36px;
+	}
+}
+
+.info-map-miyagi {
+	display: inline-block;
+	max-width: 89px;
+	height: auto;
+}
+
+.info-map-hokkaido {
+	display: inline-block;
+	max-width: 100px;
+	height: auto;
+}
+
+.info-map-kyoto {
+	display: inline-block;
+	max-width: 91px;
+	height: auto;
+}
+
+.info-map-osaka {
+	display: inline-block;
+	max-width: 72px;
+	height: auto;
+}
+
+.info-map-hiroshima {
+	display: inline-block;
+	max-width: 98px;
+	height: auto;
+}
+
+.info-map-fukuoka {
+	display: inline-block;
+	max-width: 100px;
+	height: auto;
+}
+
+.info-map-okinawa {
+	display: inline-block;
+	max-width: 61px;
+	height: auto;
+}
+
+.info-map-detail {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 30px;
+	@include max-screen($breakpoint-mobile) {
+		display: block;
+		text-align: center;
+		padding: 0;
+	}
+}
+
+.info-map-name {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 15px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 15px;
+		font-size: 16px;
+	}
+}
+
+.info-map-direction {
+	margin-bottom: 15px;
+}
+
+.info-map-datetime {
+	line-height: 1.2;
+	margin-bottom: 22px;
+}
+
+.info-map-datetime-osaka {
+	margin-bottom: 18px;
+}
+
+.info-map-date {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+	margin-right: 10px;
+}
+
+.info-map-opening {
+	font-size: 12px;
+	display: inline-block;
+}
+
+.info-map-opening-time {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.info-map-start-time {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.info-map-guest {
+	line-height: 1.8;
+	margin-bottom: 19px;
+}
+
+.info-map-guest-hokkaido {
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 27px;		
+	}
+}
+
+.info-map-guest-employee {
+	font-size: 10px;
+	border: 1px solid $base-font-color;
+	padding: 6px 8px;
+	margin-right: 10px;
+}
+
+.info-map-guest-name {
+	font-weight: 600;
+	letter-spacing: 0.05em;
+}
+
+.info-map-google {
+	color: $base-font-color;
+	&:hover {
+		text-decoration: underline;
+	}
+}

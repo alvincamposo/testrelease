@@ -1,0 +1,11 @@
+.l-nav {
+	padding: 17px 0 22px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	@include max-screen($breakpoint-mobile) {
+		padding: 17px 0 21px;
+	}
+}

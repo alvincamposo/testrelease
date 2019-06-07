@@ -1,0 +1,10 @@
+.l-container {
+	max-width: $site-size;
+	padding: 0 60px;
+	margin: auto;
+	position: relative;
+	@include max-screen($breakpoint-mobile) {
+		width: 100%;
+		padding: 0 20px;
+	}
+}
