@@ -1,0 +1,7 @@
+Build 2019-03-29 v2.0.X
+
+
+# Release Notes Wave 2.0 v2.0.X
+
+- 〇〇〇
+- △△△
