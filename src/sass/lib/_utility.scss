@@ -1,0 +1,59 @@
+/*
+Utility
+
+This means helper class like a snippet.
+Utility should always have the prefix "u-".
+And you should not feel free to add a new Utility class.
+*/
+
+//hide text
+.u-hidden {
+  overflow: hidden;
+  text-indent: 120%;
+  white-space: nowrap;
+}
+
+//show pc
+.u-show-pc {
+  @include max-screen($breakpoint-mobile) {
+      display: none !important;
+  }
+}
+
+
+//show sp
+.u-show-sp {
+  display: none !important;
+
+  @include max-screen($breakpoint-mobile) {
+      display: block !important;
+  }
+}
+
+//clearfix
+.u-clear {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//Omit text on one line, and add "..."
+.u-elps {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
+//No tap highlight on a smart phone
+.u-notap {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
