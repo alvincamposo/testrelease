@@ -1,0 +1,17 @@
+.job {
+	display: block;
+	margin-bottom: 20px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 0;
+	}
+}
+
+.job-text {
+	text-align: center;
+	font-weight: 600;
+	line-height: 1.8;
+	letter-spacing: 0.05em;
+	@include max-screen($breakpoint-mobile) {
+		text-align: left;
+	}
+}

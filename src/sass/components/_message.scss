@@ -1,0 +1,27 @@
+.message {
+	display: block;
+}
+
+.message-model {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 85px;
+	@include max-screen($breakpoint-mobile) {
+		margin-bottom: 45px;
+	}
+}
+
+.message-text {
+	line-height: 1.8;
+	margin-bottom: 25px;
+	padding: 0 60px;
+	letter-spacing: 0.053em;
+	font-weight: 600;
+	&:nth-last-of-type(1) {
+		margin-bottom: 60px;
+	}
+	@include max-screen($breakpoint-mobile) {
+		padding: 0 18px;
+	}
+}
